@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>M A R E Q U I N</title>
+</head>
+<body>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #282828;
+  color: #fff;
+}
+
+header {
+  background-color: #191414;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #fff;
+}
+
+nav {
+  background-color: #191414;
+  display: flex;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+nav a:hover {
+  color: #1ed760;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main h2 {
+  margin: 0;
+  font-size: 36px;
+}
+
+main p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+footer {
+  background-color: #191414;
+  color: #b3b3b3;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+}
+.tweet {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #191414;
+  color: #fff;
+}
+
+.tweet h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #1da1f2;
+}
+
+.tweet p:first-of-type {
+  font-style: italic;
+  color: #b3b3b3;
+  margin-bottom: 20px;
+}
+
+.tweet img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.tweet p:last-of-type {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+a.link {
+  color: blue;
+  text-decoration: none;
+}
+
+a.link:hover {
+  color: red;
+}
+
+a.link:active {
+  color: green;
+}
+
+a.link:visited {
+  color: purple;
+}
+
+    </style>
+  <header>
+    <h1>Marequin </h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="post.html">post</a></li>
+      <li><a href="actu.html">actu</a></li>
+      <li><a href="Me.html">Moi</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Bienvenue sur mon site</h2>
+    <p>Vous trouverez ici plein de tips et astuces en rapport avec la tech</p>
+  </main>
+  <article class="tweet">
+    <h2>nmap Python</h2>
+    <p>Date de publication: 2023-01-02</p>
+    <img src="image.jpg" alt="Titre de l'image">
+    <code><pre style="background-color: #191414; border-radius: 4px; padding: 4px;">
+      import nmap
+
+      nm = nmap.PortScanner()
+      
+      nm.scan('127.0.0.1', '22-443')
+      
+      for host in nm.all_hosts():
+          print('Host : %s (%s)' % (host, nm[host].hostname()))
+          print('State : %s' % nm[host].state())
+          for proto in nm[host].all_protocols():
+              print('Protocol : %s' % proto)
+              lport = nm[host][proto].keys()
+              lport.sort()
+              for port in lport:
+                  print ('port : %s\tstate : %s' % (port, nm[host][proto][port]['state']))
+      </pre></code>
+    <p>Grace à la lib <a href="https://nmap.org/docs.html" class="link">nmap <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"><path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></svg></a> en python vous allez pouvoir intégrer dans un script python une fonctionnalité de netscan, nmap propose également une large documentation que je vous conseil d'aller check ! (;</p>
+  </article>
+  
+  <footer>
+    <p>Copyright 2023</p>
+  </footer>
+</body>
+</html>
